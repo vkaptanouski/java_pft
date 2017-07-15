@@ -1,5 +1,6 @@
+package by.stqa.pft.sandbox;
 
-public class DooBee {
+public class DooBeeNew2 {
     public static void main (String[] args){
         int x = 1;
         while (x < 3){
