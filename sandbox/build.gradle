@@ -1,3 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'application'
-mainClassName = "DooBeeNew2"
+mainClassName = "DooBee"
+
+repositories  {
+    mavenCentral()
+}
+
+dependencies  {
+    compile 'org.testng:testng:6.11'
+}
