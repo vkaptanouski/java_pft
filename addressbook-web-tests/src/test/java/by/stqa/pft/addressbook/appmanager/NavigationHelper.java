@@ -7,7 +7,7 @@ public class NavigationHelper {
     private FirefoxDriver wd;
 
     public NavigationHelper(FirefoxDriver wd) {
-        this wd = wd;
+        this.wd = wd;
     }
 
     public void gotoGroupPage() {
