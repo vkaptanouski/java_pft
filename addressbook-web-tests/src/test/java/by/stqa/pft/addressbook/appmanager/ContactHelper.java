@@ -12,8 +12,12 @@ public class ContactHelper extends HelperBase{
         super(wd);
     }
 
+    public void submitContactModification() {
+        click(By.xpath("//input[contains(@value,'Update')]"));
+    }
+
     public void submitContactCreation() {
-        click(By.xpath("//div[@id='content']/form/input[21]"));
+        click(By.xpath("//input[contains(@value,'Enter')]"));
     }
 
     public void fillContactForm(ContactData contactData) {
@@ -23,21 +27,29 @@ public class ContactHelper extends HelperBase{
         type(By.name("mobile"), contactData.getMobilePhone());
     }
 
-    public void addContact() {
+    /*public void addContact() {
         click(By.linkText("add new"));
+    }*/
+
+    public void addContact() {
+        click(By.xpath("//div[@id='nav']/ul/li/a[contains(text(),'add new')]"));
     }
 
+
     public void selectContact() {
-        click(By.name("selected[]"));
+        click(By.xpath("//input[contains(@name,'selected[]')]"));
     }
 
     public void submitContactDeletion() {
-        click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+        click(By.xpath("//input[contains(@value,'Delete')]"));
     }
 
+
     public void editContact() {
-        click(By.xpath("//table[@id='maintable']/tbody/tr[2]/td[8]/a/img"));
+        click(By.xpath("//td[@class='center']/a/img[contains(@title,'Edit')]"));
     }
+
+
 }
 
 
