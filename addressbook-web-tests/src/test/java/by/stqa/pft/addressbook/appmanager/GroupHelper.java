@@ -12,36 +12,36 @@ public class GroupHelper extends HelperBase{
     }
 
     public void returnToGroupPage() {
-        click(By.linkText("group page"));
+        click(By.xpath("//a[contains(text(),'group page')]"));
     }
 
     public void submitGroupCreation() {
-        click(By.name("submit"));
+        click(By.xpath("//input[contains(@value,'Enter information')]"));
     }
 
     public void fillGroupForm(GroupData groupData) {
-        type(By.name("group_name"), groupData.getName());
-        type(By.name("group_header"), groupData.getHeader());
-        type(By.name("group_footer"), groupData.getFooter());
+        type(By.xpath("//input[contains(@name,'group_name')]"), groupData.getName());
+        type(By.xpath("//textarea[contains(@name,'group_header')]"), groupData.getHeader());
+        type(By.xpath("//textarea[contains(@name,'group_footer')]"), groupData.getFooter());
     }
 
     public void initGroupCreation() {
-        click(By.name("new"));
+        click(By.xpath("//input[contains(@value,'New group')]"));
     }
 
     public void deleteSelectedGroups() {
-        click(By.name("delete"));
+        click(By.xpath("//input[contains(@value,'Delete group(s)')]"));
     }
 
     public void selectGroup() {
-        click(By.name("selected[]"));
+        click(By.xpath("//input[contains(@name,'selected[]')]"));
     }
 
     public void initGroupModification() {
-        click(By.name("edit"));
+        click(By.xpath("//input[contains(@value,'Edit group')]"));
     }
 
     public void submitGroupModification() {
-        click(By.name("update"));
+        click(By.xpath("//input[contains(@value,'Update')]"));
     }
 }
