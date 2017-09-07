@@ -5,6 +5,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import static com.codeborne.selenide.Selenide.$$x;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.confirm;
+
 public class ContactHelper extends HelperBase{
 
 
@@ -36,7 +40,9 @@ public class ContactHelper extends HelperBase{
     }
 
     public void submitContactDeletion() {
-        click(By.xpath("//input[contains(@value,'Delete')]"));
+        $$x("//input[contains(@name,'selected[]')]").first().click();
+        $x("//input[contains(@value,'Delete')]");
+        confirm();
     }
 
     public void editContact() {
